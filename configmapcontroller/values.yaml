@@ -1,0 +1,6 @@
+configMapController:
+  namespace: tools
+  image:
+    name: fabric8/configmapcontroller
+    tag: "2.3.7"
+    pullPolicy: IfNotPresent
