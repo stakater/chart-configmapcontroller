@@ -1,0 +1,11 @@
+apiVersion: v1
+name: configmapcontroller
+description: configmapcontroller chart that runs on kubernetes
+version: 1.0.0
+keywords:
+  - configmapcontroller
+  - kubernetes
+home: https://github.com/stakater/chart-configmapcontroller
+maintainers:
+- name: Stakater
+  email: stakater@aurorasolutions.io
