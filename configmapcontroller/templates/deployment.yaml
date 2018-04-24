@@ -2,27 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: {{ template "name" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: {{ .Release.Name | quote }}
-    heritage: {{ .Release.Service | quote }}
+{{ include "labels.stakater" . | indent 4 }}
+{{ include "labels.chart" . | indent 4 }}
   name: {{ template "name" . }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ template "name" . }}
-      chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-      release: {{ .Release.Name | quote }}
-      heritage: {{ .Release.Service | quote }}
+{{ include "labels.selector" . | indent 6 }}
   template:
     metadata:
       labels:
-        app: {{ template "name" . }}
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: {{ .Release.Name | quote }}
-        heritage: {{ .Release.Service | quote }}
-        version: {{ .Chart.Version }}
+{{ include "labels.selector" . | indent 8 }}
     spec:
       containers:
       - env:

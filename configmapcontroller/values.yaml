@@ -1,4 +1,8 @@
 configMapController:
+  labels:
+    group: com.stakater.platform
+    provider: stakater
+    version: 2.3.7
   namespace: tools
   image:
     name: fabric8/configmapcontroller
