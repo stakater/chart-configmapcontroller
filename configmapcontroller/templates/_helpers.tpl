@@ -23,7 +23,7 @@ provider: {{ .Values.configMapController.labels.provider }}
 
 {{- define "labels.stakater" -}}
 {{ template "labels.selector" . }}
-version: {{ .Values.configMapController.labels.version | quote }}
+version: "{{ .Values.configMapController.labels.version }}"
 {{- end -}}
 
 {{- define "labels.chart" -}}
