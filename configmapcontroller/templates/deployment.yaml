@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-{{ include "labels.stakater" . | indent 4 }}
-{{ include "labels.chart" . | indent 4 }}
-  name: {{ template "name" . }}
+{{ include "configmapcontroller.labels.stakater" . | indent 4 }}
+{{ include "configmapcontroller.labels.chart" . | indent 4 }}
+  name: {{ template "configmapcontroller.name" . }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-{{ include "labels.selector" . | indent 6 }}
+{{ include "configmapcontroller.labels.selector" . | indent 6 }}
   template:
     metadata:
       labels:
-{{ include "labels.selector" . | indent 8 }}
+{{ include "configmapcontroller.labels.selector" . | indent 8 }}
     spec:
       containers:
       - env:
@@ -23,5 +23,5 @@ spec:
               fieldPath: metadata.namespace
         image: "{{ .Values.configMapController.image.name }}:{{ .Values.configMapController.image.tag }}"
         imagePullPolicy: {{ .Values.configMapController.image.pullPolicy }}
-        name: {{ template "name" . }}
-      serviceAccountName: {{ template "name" . }}
+        name: {{ template "configmapcontroller.name" . }}
+      serviceAccountName: {{ template "configmapcontroller.name" . }}
