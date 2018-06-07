@@ -1,7 +1,7 @@
 apiVersion: v1
 name: configmapcontroller
 description: configmapcontroller chart that runs on kubernetes
-version: 1.0.3
+version: 1.0.4
 keywords:
   - configmapcontroller
   - kubernetes
