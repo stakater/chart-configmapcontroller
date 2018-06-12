@@ -3,7 +3,6 @@ configMapController:
     group: com.stakater.platform
     provider: stakater
     version: 2.3.7
-  namespace: tools
   image:
     name: fabric8/configmapcontroller
     tag: "2.3.7"
