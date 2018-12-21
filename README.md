@@ -11,4 +11,3 @@ Install `configmapcontroller` chart
 ```bash
 helm install --name configmapcontroller chartmuseum/configmapcontroller --namespace <namespace-name>
 ```
-testing
